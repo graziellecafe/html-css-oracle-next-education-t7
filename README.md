@@ -66,3 +66,46 @@ E a branch será alterada. O comando também permite criar uma branch e imediata
 ```js
 git checkout -b <- nome da branch ->
 ```
+
+Para mais informações, temos o seguinte artigo na Alura: [Comparativo Git e Github](https://www.alura.com.br/artigos/o-que-e-git-github) e [Iniciando repositório git](https://www.alura.com.br/artigos/iniciando-repositorio-git). 
+
+### Lista de comandos básicos mais utilizados ao trabalhar com versionamento em Git 
+
+- **git config**: Este é o primeiro comando a ser executado após instalar o Git. Ele possibilita configurar seu nome e endereço de email que ficará vinculado às alterações.
+
+```js
+git config --global user.name "Nome do usuário"
+git config --global user.email "seu@email.com"
+```
+
+- **git init**: Inicia ou cria um repositório.
+```js
+git init
+````
+
+- **git status**: Permite visualizar o estado do repositório.
+
+```js
+git status
+```
+git add: Prepara o conteúdo para o próximo commit.
+$ git add nome_do_arquivo
+$ git add .
+git commit: Salva o conteúdo atual junto com uma mensagem de registro do usuário que descreve as alterações.
+$ git commit -m "Mensagem descritiva do commit"
+git clone: Clona um repositório existente.
+$ git clone [url]
+git branch: Uma branch nada mais é do que uma ramificação dentro do repositório. Este comando pode ser utilizado de diversas maneiras.
+$ git branch // Mostra as branches existentes em um repositório
+$ git branch nome_da_branch // Cria uma nova branch
+$ git branch -M nome_da_branch // Renomeia a branch atual
+git log: Exibe um histórico de commits. Este comando pode ser utilizado de diversas formas.
+$ git log
+$ git log --oneline
+git remote: Exibe o repositório remoto.
+$ git remote
+$ git remote -v
+git pull: Baixa o conteúdo do repositório remoto, atualizando automaticamente o repositório local.
+$ git pull
+git push: Envia o conteúdo do repositório local, atualizando automaticamente o repositório remoto.
+$ git push
