@@ -1,9 +1,5 @@
-# Formação Iniciante em Programação 
-## 1. HTML e CSS: Ambientes de desenvolvimento, estruturas de arquivos e tags
-## 2. HTML e CSS: Classes, posicionamento e flexbox
-## 3. HTML e CSS: Cabeçalho, footer e variáveis CSS
-## 4. HTML e CSS: Trabalhando com responsabilidade e publicação de projetos 
-## 5. Git e Github 
+# Formação Iniciante em Programação  
+## Git e Github 
 ### Diferenças 
 O **Github** é uma “rede social dev” em que é possível armazenar e compartilhar projetos de desenvolvimento de software.
 
@@ -138,7 +134,7 @@ git pull
 git push
 ```
 
-## 6. Curso Git e Github: compartilhando e colaborando em projetos 
+## Curso Git e Github: compartilhando e colaborando em projetos 
 Os comandos git reset, git revert e git commit --amend são usados para manipular o histórico de commits no Git, mas cada um serve a propósitos diferentes e deve ser usado com cuidado, especialmente em repositórios compartilhados. Vamos analisar cada um:
 
 1. **git reset**: O comando git reset é utilizado para desfazer commits ou alterações no repositório local, afetando o histórico de commits. Dependendo dos parâmetros usados, ele pode alterar o índice (staging area), a árvore de trabalho (working directory) ou ambos.
