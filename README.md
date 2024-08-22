@@ -88,24 +88,126 @@ git init
 ```js
 git status
 ```
-git add: Prepara o conteúdo para o próximo commit.
-$ git add nome_do_arquivo
-$ git add .
-git commit: Salva o conteúdo atual junto com uma mensagem de registro do usuário que descreve as alterações.
-$ git commit -m "Mensagem descritiva do commit"
-git clone: Clona um repositório existente.
-$ git clone [url]
-git branch: Uma branch nada mais é do que uma ramificação dentro do repositório. Este comando pode ser utilizado de diversas maneiras.
-$ git branch // Mostra as branches existentes em um repositório
-$ git branch nome_da_branch // Cria uma nova branch
-$ git branch -M nome_da_branch // Renomeia a branch atual
-git log: Exibe um histórico de commits. Este comando pode ser utilizado de diversas formas.
-$ git log
-$ git log --oneline
-git remote: Exibe o repositório remoto.
-$ git remote
-$ git remote -v
-git pull: Baixa o conteúdo do repositório remoto, atualizando automaticamente o repositório local.
-$ git pull
-git push: Envia o conteúdo do repositório local, atualizando automaticamente o repositório remoto.
-$ git push
+
+- **git add**: Prepara o conteúdo para o próximo commit.
+
+```js
+git add nome_do_arquivo
+git add .
+```
+
+- **git commit**: Salva o conteúdo atual junto com uma mensagem de registro do usuário que descreve as alterações.
+
+```js
+git commit -m "Mensagem descritiva do commit"
+```
+
+- **git clone**: Clona um repositório existente.
+
+```jsgit clone [url]
+```
+
+- **git branch**: Uma branch nada mais é do que uma ramificação dentro do repositório. Este comando pode ser utilizado de diversas maneiras.
+
+```js
+git branch // Mostra as branches existentes em um repositório
+git branch nome_da_branch // Cria uma nova branch
+git branch -M nome_da_branch // Renomeia a branch atual
+```
+- **git log**: Exibe um histórico de commits. Este comando pode ser utilizado de diversas formas.
+```js
+git log
+git log --oneline
+```
+
+- **git remote**: Exibe o repositório remoto.
+```js
+git remote
+git remote -v
+```
+
+- **git pull**: Baixa o conteúdo do repositório remoto, atualizando automaticamente o repositório local.
+
+```js 
+git pull
+```
+
+- **git push**: Envia o conteúdo do repositório local, atualizando automaticamente o repositório remoto.
+
+```
+git push
+```
+
+## 6. Curso Git e Github: compartilhando e colaborando em projetos 
+Os comandos git reset, git revert e git commit --amend são usados para manipular o histórico de commits no Git, mas cada um serve a propósitos diferentes e deve ser usado com cuidado, especialmente em repositórios compartilhados. Vamos analisar cada um:
+
+1. **git reset**: O comando git reset é utilizado para desfazer commits ou alterações no repositório local, afetando o histórico de commits. Dependendo dos parâmetros usados, ele pode alterar o índice (staging area), a árvore de trabalho (working directory) ou ambos.
+
+Principais modos de uso: 
+```js
+git reset --soft <commit>:
+```
+
+Desfaz os commits, mas mantém as alterações no índice (staging area) e na árvore de trabalho (working directory). É como se você desfizesse o commit, mas as mudanças ainda estivessem prontas para serem commitadas novamente.
+```js
+git reset --mixed <commit> (modo padrão):
+```
+
+Desfaz os commits e as alterações são movidas da área de staging para a árvore de trabalho. As mudanças não ficam mais preparadas para commit, mas ainda estão no seu diretório de trabalho.
+```js
+git reset --hard <commit>:
+```
+
+Desfaz os commits e também remove as alterações tanto do índice quanto da árvore de trabalho. Isso significa que as alterações são perdidas completamente, sem chance de recuperação pelo Git.
+Exemplo:
+```js
+bash
+Copiar código
+git reset --soft HEAD~1
+```
+
+Esse comando desfaz o último commit, mantendo as alterações preparadas no staging.
+
+2. **git revert**: O comando git revert é usado para criar um novo commit que desfaz as alterações de um commit anterior, sem remover o commit original do histórico. É uma maneira segura de desfazer mudanças em um repositório compartilhado, pois não altera o histórico de commits.
+
+Como funciona:
+```js
+git revert <commit>:
+```
+
+Reverte as mudanças feitas no commit especificado, criando um novo commit com o efeito oposto. Isso é útil quando você precisa desfazer mudanças sem alterar o histórico.
+Exemplo:
+
+```js
+bash
+Copiar código
+git revert a1b2c3d
+```
+
+Esse comando cria um novo commit que desfaz as alterações feitas no commit a1b2c3d.
+
+3. **git commit --amend**: O comando git commit --amend permite modificar o último commit. Você pode alterar a mensagem do commit ou adicionar/alterar arquivos que deveriam ter sido incluídos no commit anterior.
+
+Como funciona:
+```js
+git commit --amend:
+```
+
+Abre o editor de texto para que você possa modificar a mensagem do último commit ou atualiza o commit com as mudanças atuais do índice (staging area).
+Exemplo:
+
+```js
+bash
+Copiar código
+git commit --amend -m "Nova mensagem de commit"
+```
+
+Esse comando altera a mensagem do último commit.
+
+Cuidados ao usar:
+
+- **git reset**: Use com cautela, especialmente o --hard, pois pode resultar em perda de trabalho não versionado.
+
+- **git revert**: Seguro para usar em repositórios compartilhados, pois não altera o histórico de commits.
+
+- **git commit --amend**: Deve ser usado apenas se o commit ainda não foi enviado ao repositório remoto (git push).
