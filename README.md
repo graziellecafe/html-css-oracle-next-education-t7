@@ -5,7 +5,7 @@ O **Github** é uma “rede social dev” em que é possível armazenar e compar
 
 O **Git** é um sistema de controle de versão de arquivos; em outras palavras, é responsável por guardar o histórico de alterações sempre que alguém modificar algum arquivo que está sendo monitorado por ele.
 
-![Comparativo Git e Github](img/comparativo-git-github.webp)
+![Comparativo Git e Github](assets/comparativo-git-github.webp)
 
 ### Conceitos fundamentais do Git 
 - **Repositório**: é como uma pasta ou diretório que contém todos os arquivos e o histórico de um projeto
